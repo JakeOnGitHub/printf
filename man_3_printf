@@ -1,0 +1,51 @@
+.\" Manpage for _printf.
+.\" Contact Jake Crandall @ 4221@holbertonschool.com or Jarrett Jewart @ 4215@holbertonschool.com to correct errors or typos.
+
+.TH _printf(3) "2 March 2022" "1.0" "_printf man page"
+.SH NAME
+.B _printf 
+-\ Formatted output conversion.
+.SH SYNOPSIS
+.B #include "main.h"
+
+.B int _printf(const char *
+.I format
+.B , ...)
+.SH DESCRIPTION
+.B _printf()
+Prints to standard output under the control of a 
+.I format
+string that specifies how subsequent arguments are converted for output. 
+.SH Return value
+With successful return, functions return the number of characters printed, excluding the null byte.
+
+If an output error, a negative value is returned.
+.SH Format of the format string
+The format string consists of 0 or more directives (ordinary characters that are not %), that are copied to the output. The format string consists of conversion specifications, which result in fetching zero or more subsequent arguments. Each conversion specification is introduced by with % and ends with the conversion specifier.
+The argument corresponds properly with the conversion specifier. All arguments are used in the order given.
+.SH The conversion specifier
+Character that specifies the applied conversion type. Conversion specifiers and meanings are:
+.TP
+.BR c
+The int argument is converted to an unsigned char and the converted character is printed.
+.TP
+.B s
+The const char * argument is a pointer to an array of character type. Characters in the array are written up to the (but do not include the) null byte.
+.TP
+.B d, i
+The int argument is converted to signed decimal notation.
+.TP
+.B %
+A '%' is written but no argument is converted. The complete version specification is '%%'
+.SH EXAMPLE
+Print the day of the year, with day of the week and month are pointers to strings and day and year are integers:
+
+#include "main.h"
+
+_printf("%s, %s %d, %d\\n", weekday, month, day, year);
+.SH SEE ALSO
+.I _printf(3)
+.SH BUGS
+No known bugs.
+.SH AUTHORS
+Jake Crandall, Jarrett Jewart

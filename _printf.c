@@ -14,15 +14,6 @@ static int (*_specifiers(const char *format))(va_list)
 		{"s", print_s},
 		{"i", print_i},
 		{"d", print_d},
-		{"u", print_u},
-		{"b", print_b},
-		{"o", print_o},
-		{"x", print_x},
-		{"X", print_X},
-		{"p", print_p},
-		{"S", print_S},
-		{"r", print_r},
-		{"R", print_R},
 		{NULL, NULL}
 	};
 
