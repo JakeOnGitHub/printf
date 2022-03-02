@@ -9,7 +9,7 @@
 static int (*_specifiers(const char *format))(va_list)
 {
 	unsigned int x;
-	print_t p[] = {
+	print_x p[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
@@ -17,14 +17,14 @@ static int (*_specifiers(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (x = 0; p[x].t != NULL; x++)
+	for (x = 0; p[x].y != NULL; x++)
 	{
-		if (*(p[x].t) == *format)
+		if (*(p[x].y) == *format)
 		{
 			break;
 		}
 	}
-	return (p[x].f);
+	return (p[x].z);
 }
 
 /**
