@@ -54,7 +54,7 @@ int _printf(const char *format, ...)
 		f = _specifiers(&format[x + 1]);
 		if (f != NULL)
 		{
-			count += f(valist);
+			count += f(va_list);
 			x += 2;
 			continue;
 		}
